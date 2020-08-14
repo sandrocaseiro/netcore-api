@@ -1,19 +1,15 @@
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Localization;
 using NetCoreAPI.Data.EF;
 using NetCoreAPI.Filters;
-using NetCoreAPI.Localization;
+using NetCoreAPI.Helpers;
+using NetCoreAPI.Serializers;
 using NetCoreAPI.Validation;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
 
 namespace NetCoreAPI
 {
@@ -37,7 +33,11 @@ namespace NetCoreAPI
                 })
                 .ConfigureApiBehaviorOptions(o =>
                 {
-                    o.InvalidModelStateResponseFactory = ValidationErrorHandler.handle;
+                    o.InvalidModelStateResponseFactory = ValidationErrorHandler.Handle;
+                })
+                .AddJsonOptions(o =>
+                {
+                    o.JsonSerializerOptions.Converters.Add(new DResponsErrorTypeSerializer());
                 })
                 .AddFluentValidation(f => 
                 {
@@ -52,7 +52,6 @@ namespace NetCoreAPI
             });
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
@@ -62,14 +61,7 @@ namespace NetCoreAPI
 
             //app.UseHttpsRedirection();
 
-            List<CultureInfo> supportedCultures = (app.ApplicationServices.GetService<IStringLocalizer>() as JsonStringLocalizer).GetAllCultures().ToList();
-            app.UseRequestLocalization(new RequestLocalizationOptions
-            {
-                DefaultRequestCulture = new RequestCulture(Configuration.GetValue<string>("Locale:Default")),
-                SupportedCultures = supportedCultures,
-                SupportedUICultures = supportedCultures,
-                RequestCultureProviders = new List<IRequestCultureProvider> { new AcceptLanguageHeaderRequestCultureProvider() }
-            });
+            app.UseJsonLocalization(Configuration.GetValue<string>("Locale:Default"));
 
             app.UseRouting();
 

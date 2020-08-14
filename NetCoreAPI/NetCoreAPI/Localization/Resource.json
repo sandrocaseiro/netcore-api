@@ -70,5 +70,9 @@
     "Error_InvalidCredentials": {
         "en-US": "Invalid Credentials",
         "pt-BR": "Credenciais inválidas"
+    },
+    "Error_Validation_NotNull": {
+        "en-US": "The field {field} cannot be null",
+        "pt-BR": "A propriedade {PropertyName} não pode ser nula"
     }
 }

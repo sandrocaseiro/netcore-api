@@ -1,9 +1,10 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Localization;
+using NetCoreAPI.Localization;
 
-namespace NetCoreAPI.Localization
+namespace NetCoreAPI.Helpers
 {
-    public static class JsonLocalizerExtensions
+    public static class ServiceCollectionExtensions
     {
         public static void AddJsonLocalization(this IServiceCollection services)
         {

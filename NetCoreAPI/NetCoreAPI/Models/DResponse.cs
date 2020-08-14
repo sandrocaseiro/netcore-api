@@ -8,7 +8,7 @@ namespace NetCoreAPI.Models
     public class DResponse<T> where T : class
     {
         public T Data { get; set; }
-        public List<Error> Errors { get; set; } = Enumerable.Empty<Error>().ToList();
+        public IEnumerable<Error> Errors { get; set; } = Enumerable.Empty<Error>().ToList();
         public bool IsSuccess { get { return !Errors.Any() || !Errors.Any(e => e.Type == ErrorType.Error); } }
 
         public static DResponse<T> ToOk(T data, int code, string message) => 
@@ -17,7 +17,7 @@ namespace NetCoreAPI.Models
         public static DResponse<T> ToNotOk(int code, string message) => 
             new DResponse<T> { Data = null, Errors = new List<Error> { Error.ToError(code, message) } };
 
-        public static DResponse<T> ToNotOk(List<Error> errors) => new DResponse<T> { Data = null, Errors = errors };
+        public static DResponse<T> ToNotOk(IEnumerable<Error> errors) => new DResponse<T> { Data = null, Errors = errors };
 
         public class Error
         {
