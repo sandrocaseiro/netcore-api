@@ -1,0 +1,78 @@
+﻿{
+	"Error_Success": {
+		"en-US": "Success",
+		"pt-BR": "Sucesso"
+	},
+	"Error_Server": {
+		"en-US": "Server error",
+		"pt-BR": "Erro do servidor"
+	},
+	"Error_BadRequest": {
+		"en-US": "Bad request",
+		"pt-BR": "Requisi??o inv?lida"
+	},
+	"Error_Unauthorized": {
+		"en-US": "Unauthorized",
+		"pt-BR": "N?o autorizado"
+	},
+	"Error_Forbidden": {
+		"en-US": "Access denied",
+		"pt-BR": "Acesso negado"
+	},
+	"Error_NotFound": {
+		"en-US": "Not found",
+		"pt-BR": "N?o encontrado"
+	},
+	"Error_MethodNotAllowed": {
+		"en-US": "Method not allowed",
+		"pt-BR": "M?todo n?o permitido"
+	},
+	"Error_NotAcceptable": {
+		"en-US": "Not acceptable",
+		"pt-BR": "N?o aceit?vel"
+	},
+	"Error_UnsupportedMediaType": {
+		"en-US": "Unsupported",
+		"pt-BR": "N?o suportado"
+	},
+	"Error_TokenExpired": {
+		"en-US": "Expired token",
+		"pt-BR": "Token expirado"
+	},
+	"Error_InvalidToken": {
+		"en-US": "Invalid token",
+		"pt-BR": "Token inv?lido"
+	},
+	"Error_ApiError": {
+		"en-US": "API Integration Error. Details: {0}",
+		"pt-BR": "Erro de integra??o de API. Detalhes: {0}"
+	},
+	"Error_ItemNotFound": {
+		"en-US": "Item not found",
+		"pt-BR": "Item n?o encontrado"
+	},
+	"Error_UsernameAlreadyExists": {
+		"en-US": "Username already taken",
+		"pt-BR": "Nome de usu?rio j? existente"
+	},
+	"Error_BindingValidation": {
+		"en-US": "Bind validation",
+		"pt-BR": "Erro de valida??o"
+	},
+	"Error_PageableRequest": {
+		"en-US": "Bad request. Invalid value for parameter {0}",
+		"pt-BR": "Requisi??o Inv?lida. Valor inv?lido para o par?metro {0}"
+	},
+	"Error_FilterRequest": {
+		"en-US": "Bad request. Invalid value for parameter {0}",
+		"pt-BR": "Requisi??o Inv?lida. Valor inv?lido para o par?metro {0}"
+	},
+	"Error_InvalidCredentials": {
+		"en-US": "Invalid Credentials",
+		"pt-BR": "Credenciais inv?lidas"
+	},
+	"Error_Validation_NotNull": {
+		"en-US": "The field {field} cannot be null",
+		"pt-BR": "A propriedade {PropertyName} n?o pode ser nula"
+	}
+}

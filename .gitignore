@@ -1,7 +1,9 @@
-﻿NetCoreAPI/.vs
+NetCoreAPI/.vs
 NetCoreAPI/NetCoreAPI.IntegrationTests/obj/Release
 NetCoreAPI/NetCoreAPI.IntegrationTests/obj
 NetCoreAPI/NetCoreAPI/bin
 NetCoreAPI/NetCoreAPI/obj
 NetCoreAPI/NetCoreAPI.IntegrationTests/bin
 *.user
+bin
+obj
